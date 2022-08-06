@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import Header from '../components/Header'
+import Sidebar from '../components/Sidebar'
 
 export default function Home() {
   return (
@@ -11,7 +12,8 @@ export default function Home() {
       </Head>
       <Header/>
 
-      <main>
+      <main className="flex bg-gray-100">
+        <Sidebar/>
       </main>
     </div>
   )
