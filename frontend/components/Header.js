@@ -5,7 +5,7 @@ import {MdOutlineOndemandVideo, MdOutlineExpandMore} from "react-icons/md"
 import {AiOutlineShop, AiFillMessage, AiFillBell} from "react-icons/ai"
 import {IoGameControllerOutline} from "react-icons/io5"
 import {CgMenuGridO} from "react-icons/cg"
-import {useSession} from "next-auth/react"
+import {useSession, signOut} from "next-auth/react"
 
 import React from 'react'
 
@@ -62,7 +62,7 @@ const Header = () => {
         </div>
         {/* right elements */}
         <div className="flex items-center justify-end min-w-fit space-x-2">
-        <Image className='rounded-full' src={session?.user.image} height={40} width={40}/>
+        <Image onClick={signOut} className="rounded-full cursor-pointer" src={session?.user.image} height={40} width={40}/>
         <p className="hidden xl:inline-flex font-semibold text-sm whitespace-nowrap p-3 max-w-xs">{session?.user.name.split(" ")[0]}</p>
         <CgMenuGridO className="hidden lg:inline-flex h-10 w-10 bg-gray-200 
         text-gray-600 rounded-full p-2 cursor-pointer hover:bg-gray-300" size={20}/>
