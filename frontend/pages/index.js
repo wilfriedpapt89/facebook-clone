@@ -19,6 +19,7 @@ export default function Home({session}) {
       <main className="flex bg-gray-100">
         <Sidebar/>
         <Feed />
+        
       </main>
     </div>
   )
