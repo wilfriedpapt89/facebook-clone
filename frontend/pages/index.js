@@ -3,6 +3,7 @@ import Head from 'next/head'
 import Feed from "../components/Feed"
 import Header from '../components/Header'
 import Login from "../components/Login"
+import RightSideBar from "../components/RightSideBar"
 import Sidebar from '../components/Sidebar'
 
 export default function Home({session}) {
@@ -19,7 +20,7 @@ export default function Home({session}) {
       <main className="flex bg-gray-100">
         <Sidebar/>
         <Feed />
-        
+        <RightSideBar />
       </main>
     </div>
   )
