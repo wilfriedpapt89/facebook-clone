@@ -7,12 +7,12 @@ import {BsEmojiSmile} from "react-icons/bs"
 import {RiDeleteBin6Line} from "react-icons/ri"
 import axios from "axios";
 import { useDispatch } from 'react-redux';
-import { addPost } from '../public/features/postSlice';
+import { addPost } from '../public/src/features/postSlice';
 
 
 function CreatePost() {
-    const Facebook_CLONE_ENDPOINT = "";
-    const { data: session } = useSession();
+    const Facebook_CLONE_ENDPOINT = "http://localhost:8080/api/v1/facebookpost";
+    const { data: session, status } = useSession();
     const inputRef = useRef(null);
     const hiddenFileInput = useRef(null);
     const handleClick = () => {
@@ -48,7 +48,7 @@ function CreatePost() {
 
         }).then( (response) => {
             inputRef.current.value = "";
-            dispatch(addPost);
+            dispatch(addPost(response.data));
             removeImage();
         }).catch( (error) => {
             console.log(error);
